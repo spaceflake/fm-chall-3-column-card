@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+  /* colors primary*/
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  /* colors neutral */
+  --transparent-white: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+  --very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+  /* fonts */
+  --ff-heading: 'Big Shoulders Display', cursive;
+  --ff-para: 'Lexend Deca', sans-serif;
+
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 15px;
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+
+h1 {
+  font-family: var(--ff-heading);
+  color: var(--very-light-gray);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+p {
+  font-family: var(--ff-para);
+  color: var(--transparent-white);
+  max-width: 28ch;
+  line-height: 1.75;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  overflow: hidden;
+  margin: 2em;
+}
+
+article * {
+  margin-top: 1em;
+}
+article {
+  padding: 3em;
+}
+article:nth-child(1) {
+  background-color: var(--bright-orange);
+}
+article:nth-child(2) {
+  background-color: var(--dark-cyan);
+}
+article:nth-child(3) {
+  background-color: var(--very-dark-cyan);
+}
+
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: white;
+  color: var(--bright-orange);
+  font-family: var(--ff-para);
+  margin-top: 2em;
+  padding: 1em 2em;
+  border-radius: 1.75em;
+  border: 2px solid var(--very-light-gray);
+}
+article:nth-child(2) .button {
+  color: var(--dark-cyan);
+}
+article:nth-child(3) .button {
+  color: var(--very-dark-cyan);
+}
+article .button:hover, article .button:active {
+  background: none;
+  border: 2px solid var(--very-light-gray);
+  color: var(--very-light-gray);
+}
+
+@media screen and (min-width: 75em) {
+  main {
+  flex-direction: row;
+  }
+  .container {
+    padding: 5em 10em;
+    box-shadow: 0 0 25px  rgba(0, 0, 0, 0.15);
+    margin: 0 1em;
+  }
+  body{
+    height: 100vh;
+  }
+  .button {
+    margin-top: 5em;
+  }
+}
